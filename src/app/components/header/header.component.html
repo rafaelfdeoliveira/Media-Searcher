@@ -1,0 +1,36 @@
+<header>
+  <mat-toolbar>
+    @if (showHomePageBtn) {
+      <button
+        mat-button
+        aria-label="Go to Home page"
+        (click)="navigation.goToHomePage()"
+      >
+        Home
+        <mat-icon fontIcon="home"></mat-icon>
+      </button>
+    }
+    @if (showFavoriteMoviesPageBtn) {
+      <button
+        mat-button
+        aria-label="Go To Favorite Movies page"
+        (click)="navigation.goToFavoriteMoviesPage()"
+      >
+        Favorites
+        <mat-icon fontIcon="favorite"></mat-icon>
+      </button>
+    }
+    @if (showFavoriteMoviesListClearBtn) {
+      <button
+        mat-button
+        aria-label="Clear Favorite Movies list"
+      >
+        Clear
+        <mat-icon fontIcon="favorite"></mat-icon>
+      </button>
+    }
+    <div>
+      <span>{{ title }}</span>
+    </div>
+  </mat-toolbar>
+</header>

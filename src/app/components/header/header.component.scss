@@ -1,0 +1,26 @@
+mat-toolbar {
+  position: relative;
+}
+
+div {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+@media (max-width: 799px) {
+  div {
+    height: 100%;
+    margin: auto;
+  }
+}
+
+@media (min-width: 800px) {
+  div {
+    position: absolute;
+    top: 0;
+    bottom: 0;
+    left: 0;
+    right: 0;
+  }
+}
