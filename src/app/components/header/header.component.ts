@@ -16,10 +16,10 @@ import { NavigationService } from '../../services/navigation.service';
   styleUrl: './header.component.scss'
 })
 export class HeaderComponent {
-  @Input() showHomePageBtn: boolean = false;
-  @Input() showFavoriteMoviesPageBtn: boolean = false;
-  @Input() showFavoriteMoviesListClearBtn: boolean = false;
-  @Input() title?: string;
+  @Input() showHomePageBtn: boolean;
+  @Input() showFavoriteMoviesPageBtn: boolean;
+  @Input() showFavoriteMoviesListClearBtn: boolean;
+  @Input() title: string;
 
   constructor(
     public navigation: NavigationService

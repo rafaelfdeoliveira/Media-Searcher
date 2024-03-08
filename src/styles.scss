@@ -1,2 +1,19 @@
-html, body { height: 100%; }
-body { margin: 0; font-family: Roboto, "Helvetica Neue", sans-serif; }
+html, body {
+  height: 100%;
+}
+
+body {
+  margin: auto;
+  max-width: 1500px;
+  background-color: lightgray;
+  font-family: Roboto, "Helvetica Neue", sans-serif;
+}
+
+main {
+  background-color: whitesmoke;
+  margin: 10px;
+}
+
+main, header, footer {
+  padding: 10px;
+}
