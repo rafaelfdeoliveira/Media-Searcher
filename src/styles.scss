@@ -1,2 +1,38 @@
-html, body { height: 100%; }
-body { margin: 0; font-family: Roboto, "Helvetica Neue", sans-serif; }
+html, body {
+  height: 100%;
+}
+
+body {
+  margin: auto;
+  max-width: 1500px;
+  background-color: lightgray;
+  font-family: Roboto, "Helvetica Neue", sans-serif;
+}
+
+main {
+  background-color: whitesmoke;
+  margin: 10px;
+}
+
+main, header, footer {
+  padding: 10px;
+}
+
+@media (max-width: 450px) {
+  mat-paginator {
+    position: relative;
+
+    .mat-mdc-paginator-range-label {
+      position: absolute;
+      margin: auto;
+      bottom: 100%;
+      left: 0;
+      right: 0;
+      text-align: center;
+    }
+  }
+
+  .mat-expansion-panel-body {
+    padding: 0 6px 4px !important;
+  }
+}

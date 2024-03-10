@@ -1,18 +1,18 @@
 import { ComponentFixture, TestBed } from '@angular/core/testing';
 
-import { FavoriteMoviesPage } from './favorite-movies.page';
+import { MediaSearchComponent } from './media-search.component';
 
-describe('FavoriteMoviesComponent', () => {
-  let component: FavoriteMoviesPage;
-  let fixture: ComponentFixture<FavoriteMoviesPage>;
+describe('MediaSearchComponent', () => {
+  let component: MediaSearchComponent;
+  let fixture: ComponentFixture<MediaSearchComponent>;
 
   beforeEach(async () => {
     await TestBed.configureTestingModule({
-      imports: [FavoriteMoviesPage]
+      imports: [MediaSearchComponent]
     })
     .compileComponents();
-
-    fixture = TestBed.createComponent(FavoriteMoviesPage);
+    
+    fixture = TestBed.createComponent(MediaSearchComponent);
     component = fixture.componentInstance;
     fixture.detectChanges();
   });

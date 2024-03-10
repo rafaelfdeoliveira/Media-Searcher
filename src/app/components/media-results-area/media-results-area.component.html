@@ -1,0 +1,15 @@
+<mat-paginator
+  class="d-flex justify-content-center bg-transparent"
+  [length]="result.total"
+  [pageSize]="10"
+  [pageIndex]="currentPage"
+  [hidePageSize]="true"
+  [showFirstLastButtons]="true"
+  (page)="handlePage($event)"
+  aria-label="Change Page"
+></mat-paginator>
+<section class="d-flex flex-column p-3 gap-3">
+  @for (media of result.data; track media.id) {
+    <app-media-card [media]="media"></app-media-card>
+  }
+</section>

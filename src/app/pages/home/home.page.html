@@ -1,5 +1,15 @@
-<app-header title="Movie Searcher" [showFavoriteMoviesPageBtn]="true"></app-header>
-<main>
-
+<app-header title="Media Searcher" [showFavoriteMediasPageBtn]="true"></app-header>
+<main class="d-flex flex-column gap-3">
+  <app-media-search (mediaSearchRequested)="searchMedias($event)"></app-media-search>
+  @if (loading) {
+    <div class="d-flex justify-content-center">
+      <mat-spinner color="accent"></mat-spinner>
+    </div>
+  } @else if (mediaSearchResult) {
+    <app-media-results-area
+      [result]="mediaSearchResult"
+      [currentPage]="currentPage"
+      (newPageRequested)="searchNewPage($event)"
+    ></app-media-results-area>
+  }
 </main>
-<app-footer></app-footer>

@@ -1,0 +1,58 @@
+<mat-card>
+  <mat-card-header (click)="expansionPanel.toggle()">
+      <mat-card-title-group>
+        <mat-card-title>{{ media.title | empty }}</mat-card-title>
+        <mat-card-subtitle>Year: {{ media.year | empty }} | Type: {{ media.type | empty }}</mat-card-subtitle>
+      </mat-card-title-group>
+      <button
+        mat-icon-button
+        color="primary"
+        (click)="toggleFavorite($event)"
+        aria-label="Remove or add to the Favorite list"
+      >
+        <mat-icon [fontIcon]="favoriteFontIcon"></mat-icon>
+      </button>
+  </mat-card-header>
+  <mat-card-content>
+      <mat-expansion-panel #expansionPanel (opened)="searchDetailedMedia()" togglePosition="before">
+          <mat-expansion-panel-header collapsedHeight="max-content" expandedHeight="max-content">
+              <mat-panel-title>Details</mat-panel-title>
+          </mat-expansion-panel-header>
+          <div class="detailsArea">
+              @if (detailedMedia) {
+                <img
+                  [src]="detailedMedia.posterUrl"
+                  alt="{{media.title}} poster"
+                  onerror="this.onerror=null; this.src='./assets/svg/default-poster.svg'"
+                />
+                <div>
+                    <div class="detailsText">
+                        <p><strong>{{ detailedMedia.title | empty }}</strong></p>
+                        <p class="text-justify">{{ detailedMedia.plot | empty: '' }}</p>
+                        <br/>
+                        <p>Genre: {{ detailedMedia.genre | empty }} | Country: {{ detailedMedia.country | empty }}</p>
+                        <p>Actors: {{ detailedMedia.actors | empty}}</p>
+                        <p>Director: {{ detailedMedia.director | empty }}</p>
+                        <p>Writers: {{ detailedMedia.writers | empty }}</p>
+                        <p>Language: {{ detailedMedia.language | empty }}</p>
+                        <p>Release Date: {{detailedMedia.releaseDate | empty: '' | date: 'dd/MM/yyyy' | empty }}</p>
+                        <p>Rating: {{ detailedMedia.rating | empty }}</p>
+                        <br/>
+                        <button
+                          mat-raised-button
+                          color="primary"
+                          (click)="toggleFavorite()"
+                          aria-label="Remove or add to the Favorite list"
+                        >
+                          Favorite
+                          <mat-icon [fontIcon]="favoriteFontIcon"></mat-icon>
+                        </button>
+                    </div>
+                </div>
+              } @else if (loading) {
+                <mat-spinner [diameter]=90 color="accent"></mat-spinner>
+              }
+          </div>
+      </mat-expansion-panel>
+  </mat-card-content>
+</mat-card>

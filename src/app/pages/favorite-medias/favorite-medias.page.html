@@ -1,0 +1,12 @@
+<app-header
+  [showHomePageBtn]="true"
+  [showFavoriteMediasListClearBtn]="true"
+  title="Favorites"
+></app-header>
+<main>
+  <section class="d-flex flex-column p-3 gap-3">
+    @for (media of storage.favoriteMedias; track media.id) {
+      <app-media-card [media]="media"></app-media-card>
+    }
+  </section>
+</main>
