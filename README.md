@@ -1,6 +1,6 @@
-# Movies Guide
+# Media Searcher
 
-This project contains the source code of a movie searcher web application that retrieves movies data from [OMDb API](https://omdbapi.com/).
+This project contains the source code of a media searcher web application that retrieves media data from [OMDb API](https://omdbapi.com/).
 
 This project was developed with [Angular](https://angular.io/) version 17.2.3.
 
@@ -12,7 +12,7 @@ This project was developed with [Angular](https://angular.io/) version 17.2.3.
 
 ## Production server
 
-This application is available online: [Movie-Searcher]()
+This application is available online: [Media-Searcher](https://media-searcher.netlify.app)
 
 ## Development server
 

@@ -1,0 +1,60 @@
+$cardBackgroundColor: #A0C3FF;
+
+mat-card {
+  background-color: $cardBackgroundColor;
+}
+
+mat-card:hover {
+  box-shadow: 0 0 1rem gray;
+}
+
+mat-card-header {
+  cursor: pointer;
+  position: relative;
+  padding-bottom: 8px;
+}
+
+mat-expansion-panel {
+  background-color: $cardBackgroundColor;
+  box-shadow: none;
+}
+
+mat-expansion-panel-header {
+  background-color: $cardBackgroundColor !important;
+}
+
+.detailsArea {
+  min-height: 22rem;
+  padding-top: 1rem;
+  display: flex;
+  img {
+      max-height: 22rem;
+      height: 100%;
+  }
+  p {
+      margin-bottom: clamp(4px, 1vw, 8px);
+      font-size: clamp(14px, 2vw, 20px);
+  }
+  > div {
+      flex-grow: 1;
+      padding-left: 1rem;
+      display: flex;
+      flex-direction: column;
+  }
+}
+
+.detailsText {
+  margin-bottom: 1rem;
+  height: max-content;
+  width: 100%;
+}
+
+@media (max-width: 700px) {
+  .detailsArea {
+    flex-direction: column-reverse;
+
+    img {
+      max-height: initial;
+    }
+  }
+}

@@ -1,5 +1,5 @@
 <header>
-  <mat-toolbar>
+  <mat-toolbar class="position-relative">
     @if (showHomePageBtn) {
       <button
         mat-button
@@ -10,26 +10,29 @@
         <mat-icon fontIcon="home"></mat-icon>
       </button>
     }
-    @if (showFavoriteMoviesPageBtn) {
+    @if (showFavoriteMediasPageBtn) {
       <button
         mat-button
-        aria-label="Go To Favorite Movies page"
-        (click)="navigation.goToFavoriteMoviesPage()"
+        color="primary"
+        aria-label="Go To Favorite Medias page"
+        (click)="navigation.goToFavoriteMediasPage()"
       >
         Favorites
         <mat-icon fontIcon="favorite"></mat-icon>
       </button>
     }
-    @if (showFavoriteMoviesListClearBtn) {
+    @if (showFavoriteMediasListClearBtn) {
       <button
         mat-button
-        aria-label="Clear Favorite Movies list"
+        color="warn"
+        aria-label="Clear Favorite Medias list"
+        (click)="storage.clearFavoriteMedias()"
       >
         Clear
-        <mat-icon fontIcon="favorite"></mat-icon>
+        <mat-icon fontIcon="favorite_border"></mat-icon>
       </button>
     }
-    <div>
+    <div class="d-flex justify-content-center align-items-center">
       <span>{{ title }}</span>
     </div>
   </mat-toolbar>

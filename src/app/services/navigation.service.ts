@@ -14,7 +14,7 @@ export class NavigationService {
     this.router.navigate(['home']);
   }
 
-  public goToFavoriteMoviesPage() {
-    this.router.navigate(['favorite-movies']);
+  public goToFavoriteMediasPage() {
+    this.router.navigate(['favorite-medias']);
   }
 }

@@ -1,40 +1,45 @@
-<form
-  class="d-flex justify-content-center align-items-center column-gap-3 flex-wrap"
-  [formGroup]="form"
-  (ngSubmit)="searchMedia()"
-  >
-  <mat-form-field appearance="outline">
-    <mat-label>Title</mat-label>
-    <input matInput formControlName="searchTerm" placeholder="Media Title">
-  </mat-form-field>
-  <mat-form-field appearance="outline">
-    <mat-label>Year</mat-label>
-    <input type="number" matInput formControlName="year" placeholder="Media Year">
-  </mat-form-field>
-  <mat-form-field appearance="outline">
-    <mat-label>Type</mat-label>
-    <mat-select formControlName="type" placeholder="All">
-        <mat-option selected [value]="null">All</mat-option>
-        @for (type of mediaTypes; track type) {
-          <mat-option [value]="type">{{ type }}</mat-option>
-        }
-    </mat-select>
-  </mat-form-field>
-  <button
-    class="mb-4"
-    mat-raised-button
-    color="primary"
-    [disabled]="form.invalid"
-  >
-    Search
-  </button>
-  <button
-    class="mb-4"
-    mat-raised-button
-    color="warn"
-    type="button"
-    (click)="resetForm()"
-  >
-    Reset
-  </button>
-</form>
+<section class="d-flex flex-column align-items-center">
+  <p>Search for media title below. The year and media type parameters are optional.</p>
+  <form
+    class="d-flex justify-content-center align-items-center column-gap-3 flex-wrap"
+    [formGroup]="form"
+    (ngSubmit)="requestMediaSearch()"
+    >
+    <mat-form-field appearance="outline">
+      <mat-label>Title</mat-label>
+      <input matInput formControlName="searchTerm" placeholder="Media Title">
+    </mat-form-field>
+    <mat-form-field appearance="outline">
+      <mat-label>Year</mat-label>
+      <input type="number" matInput formControlName="year" placeholder="Media Year">
+    </mat-form-field>
+    <mat-form-field appearance="outline">
+      <mat-label>Type</mat-label>
+      <mat-select formControlName="type" placeholder="All">
+          <mat-option selected [value]="null">All</mat-option>
+          @for (type of mediaTypes; track type) {
+            <mat-option [value]="type">{{ type }}</mat-option>
+          }
+      </mat-select>
+    </mat-form-field>
+    <div class="d-flex column-gap-3">
+      <button
+        class="mb-4"
+        mat-raised-button
+        color="primary"
+        [disabled]="form.invalid"
+      >
+        Search
+      </button>
+      <button
+        class="mb-4"
+        mat-raised-button
+        color="warn"
+        type="button"
+        (click)="resetForm()"
+      >
+        Reset
+      </button>
+    </div>
+  </form>
+</section>
