@@ -10,7 +10,7 @@ import { Media } from '../models/media.model';
 })
 export class MediaService {
 
-  private readonly OMDB_API_URL = 'http://www.omdbapi.com/';
+  private readonly OMDB_API_URL = 'https://www.omdbapi.com/';
   private readonly timeoutLimit = 9000;
 
   private mediaSearchCacheMap = new Map<string, MediaSearchResult>();
